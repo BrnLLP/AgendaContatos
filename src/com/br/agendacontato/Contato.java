@@ -5,7 +5,6 @@ public class Contato {
 	private String telefone;
 	private String nascimento;
 	private String celular;
-
 	private String email;
 	
 	public Contato(String nome, String telefone, String nascimento, String celular, String email) {
