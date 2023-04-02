@@ -1,16 +1,20 @@
+package com.br.agendacontato;
 
 public class Contato {
 	private String nome;
 	private String telefone;
 	private String nascimento;
 	private String celular;
+
+	private String email;
 	
-	public Contato(String nome, String telefone, String nascimento, String celular) {
+	public Contato(String nome, String telefone, String nascimento, String celular, String email) {
 		super();
 		this.nome = nome;
 		this.telefone = telefone;
 		this.nascimento = nascimento;
 		this.celular = celular;
+		this.email = email;
 	}
 	public String getNome() {
 		return nome;
@@ -36,11 +40,10 @@ public class Contato {
 	public void setCelular(String celular) {
 		this.celular = celular;
 	}
+	public String getEmail() { return email; }
+	public void setEmail(String email) { this.email = email; }
 	
 	public String toString() {
-		return "(" + nome + ", " + telefone + ", " + nascimento + ", " +celular+ ")";
+		return "(Nome: " + nome + ", Telefone: " + telefone + ", Nascimento: " + nascimento + ", Celular: " + celular + ", Email: " + email + ")";
 	}
-	
-	
-
 }

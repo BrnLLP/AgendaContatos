@@ -1,3 +1,4 @@
+package com.br.agendacontato;
 
 public class Lista {
 	No inicio;
@@ -22,7 +23,7 @@ public class Lista {
 	public Contato buscar(String nome) {
 		No no = inicio;
 		while(no != null) {
-			if(no.getInfo().getNome()==nome) {
+			if(no.getInfo().getNome().equalsIgnoreCase(nome)) {
 				return no.getInfo();
 			}
 			no=no.getProx();
@@ -62,11 +63,9 @@ public class Lista {
 		String r = "";
 		No no = inicio;
 		while(no != null) {
-			r += no.getInfo() + " ";
+			r += no.getInfo().toString() + " ";
 			no = no.getProx();
 		}
 		return r;
 	}
-
-	
 }

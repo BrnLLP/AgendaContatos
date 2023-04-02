@@ -1,3 +1,4 @@
+package com.br.agendacontato;
 
 public class HashTable {
 	int operador;
@@ -24,13 +25,15 @@ public class HashTable {
 	}
 	public String toString() {
 		String r = "";
+		int contador = 0;
 		for(int i = 0; i<operador;i++) {
-			r += ""+i+":";
-			r += vetor[i%operador] + "\n";
+			String res = vetor[i%operador].toString();
+			if (res != "") {
+				contador++;
+				r += ""+contador+":";
+				r += res + "\n";
+			}
 		}
 		return r;
 	}
-	
-	
-	
 } 
