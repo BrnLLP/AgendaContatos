@@ -1,5 +1,6 @@
 package com.br.agendacontato;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
@@ -14,33 +15,39 @@ public class Menu {
     }
 
     private void exibirMenu() {
-        System.out.print("\n|---------- Menu ----------|");
-        System.out.print("\n|   1. Adicionar contato   |");
-        System.out.print("\n|   2. Excluir contato     |");
-        System.out.print("\n|   3. Pesquisar contato   |");
-        System.out.print("\n|   4. Exibir contatos     |");
-        System.out.print("\n|   0. Sair                |");
-        System.out.print("\n|--------------------------|");
-        System.out.print("\n\nDigite a opção desejada: ");
+        try {
+            System.out.print("\n|---------- Menu ----------|");
+            System.out.print("\n|   1. Adicionar contato   |");
+            System.out.print("\n|   2. Excluir contato     |");
+            System.out.print("\n|   3. Pesquisar contato   |");
+            System.out.print("\n|   4. Exibir contatos     |");
+            System.out.print("\n|   0. Sair                |");
+            System.out.print("\n|--------------------------|");
+            System.out.print("\n\nDigite a opção desejada: ");
 
-        int opcaoSelecionada = sc.nextInt();
+            int opcaoSelecionada = sc.nextInt();
 
-        switch (opcaoSelecionada) {
-            case 1:
-                adicionarContato();
-            case 2:
-                excluirContato();
-            case 3:
-                pesquisarContato();
-            case 4: {
-                System.out.print(hashTable.toString());
-                exibirMenu();
+            switch (opcaoSelecionada) {
+                case 1:
+                    adicionarContato();
+                case 2:
+                    excluirContato();
+                case 3:
+                    pesquisarContato();
+                case 4: {
+                    System.out.print(hashTable.toString());
+                    exibirMenu();
+                }
+                case 0:
+                    break;
+                default:
+                    exibirMenu();
+
             }
-            case 0:
-                break;
-            default:
-                exibirMenu();
-
+        } catch (InputMismatchException e) {
+            System.out.println("Opção inválida, tente novamente.");
+            sc.next();
+            exibirMenu();
         }
     }
 
