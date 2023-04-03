@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
-    HashTable hashTable = new HashTable(1000);
+    HashTable hashTable = new HashTable(5);
     Scanner sc = new Scanner(System.in);
     public Menu() {
         System.out.print("\n|------------------------------------|");
