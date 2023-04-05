@@ -1,3 +1,4 @@
+package com.br.agendacontato;
 
 public class No {
 	private Contato info;
@@ -15,6 +16,4 @@ public class No {
 	public void setProx(No prox) {
 		this.prox = prox;
 	}
-	
-	
 }
